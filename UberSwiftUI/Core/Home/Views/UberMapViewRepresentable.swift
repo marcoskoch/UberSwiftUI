@@ -39,12 +39,6 @@ struct UberMapViewRepresentable: UIViewRepresentable {
             }
             break
         }
-        
-        
-//
-//        if mapState == .noInput {
-//            context.coordinator.clearMapViewAndRecenterOnUserLocation()
-//        }
     }
     
     func makeCoordinator() -> MapCoordinator {
