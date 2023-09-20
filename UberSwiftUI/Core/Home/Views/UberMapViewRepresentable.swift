@@ -13,7 +13,7 @@ struct UberMapViewRepresentable: UIViewRepresentable {
     let mapView = MKMapView()
     let locationManager = LocationManager.shared
     @Binding var mapState: MapViewState
-    @EnvironmentObject var viewModel: LocationSearchViewModel
+    @EnvironmentObject var locationViewModel: LocationSearchViewModel
     
     func makeUIView(context: Context) -> some UIView {
         mapView.delegate = context.coordinator
@@ -33,7 +33,7 @@ struct UberMapViewRepresentable: UIViewRepresentable {
         case .searchingForLocation:
             break
         case .locationSelected:
-            if let coordinate = viewModel.selectedLocationCoordinate {
+            if let coordinate = locationViewModel.selectedUberLocation?.coordinate {
                 context.coordinator.addAndSelectAnnotation(withCoordinate: coordinate)
                 context.coordinator.configurePolyline(withDestinationCoordinate: coordinate)
             }
@@ -97,29 +97,10 @@ extension UberMapViewRepresentable {
         
         func configurePolyline(withDestinationCoordinate coordinate: CLLocationCoordinate2D) {
             guard let userLocationCoordinate = userLocationCoordinate else { return }
-            getDestinationRoute(from: userLocationCoordinate, to: coordinate) { route in
+            parent.locationViewModel.getDestinationRoute(from: userLocationCoordinate, to: coordinate) { route in
                 self.parent.mapView.addOverlay(route.polyline)
                 let rect = self.parent.mapView.mapRectThatFits(route.polyline.boundingMapRect, edgePadding: .init(top: 64, left: 32, bottom: 500, right: 32))
                 self.parent.mapView.setRegion(MKCoordinateRegion(rect), animated: true)
-            }
-        }
-        
-        func getDestinationRoute(from userLocation: CLLocationCoordinate2D, to destination: CLLocationCoordinate2D, completion: @escaping(MKRoute) -> Void) {
-            let userPlacemark = MKPlacemark(coordinate: userLocation)
-            let destPlacemark = MKPlacemark(coordinate: destination)
-            let request = MKDirections.Request()
-            request.source = MKMapItem(placemark: userPlacemark)
-            request.destination = MKMapItem(placemark: destPlacemark)
-            let directions = MKDirections(request: request)
-            
-            directions.calculate { response, error in
-                if let error = error {
-                    print("DEBUG: Failed to get directions with error \(error.localizedDescription)")
-                    return
-                }
-                
-                guard let route = response?.routes.first else { return }
-                completion(route)
             }
         }
         
