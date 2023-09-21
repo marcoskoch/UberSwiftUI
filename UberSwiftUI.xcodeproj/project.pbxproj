@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B9004D8F2ABC8C2600408AEF /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9004D8E2ABC8C2600408AEF /* LoginView.swift */; };
+		B9004D912ABC8C3E00408AEF /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9004D902ABC8C3E00408AEF /* RegistrationView.swift */; };
 		B90FE9E52A78271200D4F630 /* UberMapViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90FE9E42A78271200D4F630 /* UberMapViewRepresentable.swift */; };
 		B90FE9E72A782E8800D4F630 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90FE9E62A782E8800D4F630 /* LocationManager.swift */; };
 		B9332E302A74263B00ADBFCA /* UberSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9332E2F2A74263B00ADBFCA /* UberSwiftUIApp.swift */; };
@@ -27,6 +29,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B9004D8E2ABC8C2600408AEF /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		B9004D902ABC8C3E00408AEF /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		B90FE9E42A78271200D4F630 /* UberMapViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UberMapViewRepresentable.swift; sourceTree = "<group>"; };
 		B90FE9E62A782E8800D4F630 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		B9332E2C2A74263B00ADBFCA /* UberSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UberSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -58,6 +62,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B9004D8B2ABC8B8C00408AEF /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				B9004D8C2ABC8BD600408AEF /* ViewModels */,
+				B9004D8D2ABC8BDF00408AEF /* Views */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		B9004D8C2ABC8BD600408AEF /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		B9004D8D2ABC8BDF00408AEF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B9004D8E2ABC8C2600408AEF /* LoginView.swift */,
+				B9004D902ABC8C3E00408AEF /* RegistrationView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		B9332E232A74263B00ADBFCA = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +155,7 @@
 		B9332E412A7426B200ADBFCA /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				B9004D8B2ABC8B8C00408AEF /* Authentication */,
 				B9649B7F2A954E6B008DBCCC /* Trips */,
 				B94D2A992A7AF65E0087A87D /* LocationSearch */,
 				B94D2A982A7AF64F0087A87D /* Home */,
@@ -141,11 +171,11 @@
 			path = App;
 			sourceTree = "<group>";
 		};
-		B9332E432A74272400ADBFCA /* ViewModel */ = {
+		B9332E432A74272400ADBFCA /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = ViewModel;
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		B9332E442A74272B00ADBFCA /* Views */ = {
@@ -161,7 +191,7 @@
 		B94D2A982A7AF64F0087A87D /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				B9332E432A74272400ADBFCA /* ViewModel */,
+				B9332E432A74272400ADBFCA /* ViewModels */,
 				B9332E442A74272B00ADBFCA /* Views */,
 			);
 			path = Home;
@@ -170,7 +200,7 @@
 		B94D2A992A7AF65E0087A87D /* LocationSearch */ = {
 			isa = PBXGroup;
 			children = (
-				B94D2A9B2A7AF6700087A87D /* ViewModel */,
+				B94D2A9B2A7AF6700087A87D /* ViewModels */,
 				B94D2A9A2A7AF6680087A87D /* Views */,
 			);
 			path = LocationSearch;
@@ -186,12 +216,12 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		B94D2A9B2A7AF6700087A87D /* ViewModel */ = {
+		B94D2A9B2A7AF6700087A87D /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
 				B99111EA2A8E604A00DE4A55 /* LocationSearchViewModel.swift */,
 			);
-			path = ViewModel;
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		B9649B7F2A954E6B008DBCCC /* Trips */ = {
@@ -277,6 +307,7 @@
 				B90FE9E72A782E8800D4F630 /* LocationManager.swift in Sources */,
 				B9649B812A954E91008DBCCC /* RideRequestView.swift in Sources */,
 				B9D2ECD52ABA22320062713B /* Double.swift in Sources */,
+				B9004D912ABC8C3E00408AEF /* RegistrationView.swift in Sources */,
 				B9FC73B62A94FCC3005E4C15 /* MapViewState.swift in Sources */,
 				B9B020E82A855C5500B980C8 /* MapViewActionButton.swift in Sources */,
 				B9332E462A74276800ADBFCA /* HomeView.swift in Sources */,
@@ -286,6 +317,7 @@
 				B9D2ECD72ABB37730062713B /* UberLocation.swift in Sources */,
 				B9D129042A818AB500D6DB1C /* LocationSearchActivationView.swift in Sources */,
 				B99111E62A8D3C4200DE4A55 /* LocationSearchResultCell.swift in Sources */,
+				B9004D8F2ABC8C2600408AEF /* LoginView.swift in Sources */,
 				B9F8F0922A9E7E2F00E3BE7C /* RideType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
