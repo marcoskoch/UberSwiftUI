@@ -27,7 +27,7 @@ struct LoginView: View {
                     Image("uber-app-icon")
                         .resizable()
                         .frame(width: 200, height: 200)
-                        .background()
+                        .background(.white)
                         .padding(.top)
                     
                     // title
@@ -40,30 +40,15 @@ struct LoginView: View {
                 
                 VStack(spacing: 32) {
                     
-                    VStack(alignment: .leading) {
-                        Text("Email Address")
-                            .fontWeight(.semibold)
-                            .font(.footnote)
-                        
-                        TextField("name@example.com", text: $email)
-                            .keyboardType(.emailAddress)
-                        
-                        Rectangle()
-                            .foregroundColor(Color(.init(white: 1, alpha: 0.3)))
-                            .frame(width: UIScreen.main.bounds.width - 32, height: 0.7)
-                    }
+                    CustomInputField(text: $email,
+                                     title: "Email Address",
+                                     placeholder: "name@example.com")
                     
-                    VStack(alignment: .leading) {
-                        Text("Password")
-                            .fontWeight(.semibold)
-                            .font(.footnote)
-                        
-                        TextField("Enter your password", text: $password)
-                        
-                        Rectangle()
-                            .foregroundColor(Color(.init(white: 1, alpha: 0.3)))
-                            .frame(width: UIScreen.main.bounds.width - 32, height: 0.7)
-                    }
+                    
+                    CustomInputField(text: $password,
+                                     title: "Password",
+                                     placeholder: "Enter your password",
+                                     isSecureField: true)
                     
                     Button {
                         //
@@ -131,9 +116,9 @@ struct LoginView: View {
                         Image(systemName: "arrow.right")
                     }
                     .foregroundColor(.black)
+                    .frame(width: UIScreen.main.bounds.width - 32, height: 50)
                 }
-                .frame(width: UIScreen.main.bounds.width - 32, height: 50)
-                .background()
+                .background(.white)
                 .cornerRadius(10)
 
                 
