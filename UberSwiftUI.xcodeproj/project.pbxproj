@@ -26,6 +26,9 @@
 		B9AE93EE2AC1E1CF0053A9E1 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = B9AE93ED2AC1E1CF0053A9E1 /* FirebaseStorage */; };
 		B9AE93F02AC1F68B0053A9E1 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AE93EF2AC1F68B0053A9E1 /* AuthViewModel.swift */; };
 		B9AE93F22AC2246D0053A9E1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AE93F12AC2246D0053A9E1 /* User.swift */; };
+		B9AE93F82AC25FFF0053A9E1 /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AE93F72AC25FFF0053A9E1 /* SideMenuView.swift */; };
+		B9AE93FA2AC3352D0053A9E1 /* SideMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AE93F92AC3352D0053A9E1 /* SideMenuViewModel.swift */; };
+		B9AE93FC2AC3369F0053A9E1 /* SideMenuOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AE93FB2AC3369F0053A9E1 /* SideMenuOptionView.swift */; };
 		B9B020E82A855C5500B980C8 /* MapViewActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B020E72A855C5500B980C8 /* MapViewActionButton.swift */; };
 		B9CE3C9D2A866D5400252F9C /* LocationSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CE3C9C2A866D5400252F9C /* LocationSearchView.swift */; };
 		B9D129042A818AB500D6DB1C /* LocationSearchActivationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D129032A818AB500D6DB1C /* LocationSearchActivationView.swift */; };
@@ -53,6 +56,9 @@
 		B9AE93E42AC1DF9A0053A9E1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B9AE93EF2AC1F68B0053A9E1 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		B9AE93F12AC2246D0053A9E1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		B9AE93F72AC25FFF0053A9E1 /* SideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuView.swift; sourceTree = "<group>"; };
+		B9AE93F92AC3352D0053A9E1 /* SideMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewModel.swift; sourceTree = "<group>"; };
+		B9AE93FB2AC3369F0053A9E1 /* SideMenuOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuOptionView.swift; sourceTree = "<group>"; };
 		B9B020E72A855C5500B980C8 /* MapViewActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewActionButton.swift; sourceTree = "<group>"; };
 		B9CE3C9C2A866D5400252F9C /* LocationSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchView.swift; sourceTree = "<group>"; };
 		B9D129032A818AB500D6DB1C /* LocationSearchActivationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchActivationView.swift; sourceTree = "<group>"; };
@@ -183,6 +189,7 @@
 		B9332E412A7426B200ADBFCA /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				B9AE93F32AC25FC70053A9E1 /* SideMenu */,
 				B9004D8B2ABC8B8C00408AEF /* Authentication */,
 				B9649B7F2A954E6B008DBCCC /* Trips */,
 				B94D2A992A7AF65E0087A87D /* LocationSearch */,
@@ -258,6 +265,32 @@
 				B9649B802A954E91008DBCCC /* RideRequestView.swift */,
 			);
 			path = Trips;
+			sourceTree = "<group>";
+		};
+		B9AE93F32AC25FC70053A9E1 /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				B9AE93F62AC25FE30053A9E1 /* ViewModels */,
+				B9AE93F42AC25FD00053A9E1 /* Views */,
+			);
+			path = SideMenu;
+			sourceTree = "<group>";
+		};
+		B9AE93F42AC25FD00053A9E1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B9AE93F72AC25FFF0053A9E1 /* SideMenuView.swift */,
+				B9AE93FB2AC3369F0053A9E1 /* SideMenuOptionView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B9AE93F62AC25FE30053A9E1 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				B9AE93F92AC3352D0053A9E1 /* SideMenuViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -353,8 +386,11 @@
 				B9332E462A74276800ADBFCA /* HomeView.swift in Sources */,
 				B9D2ECD92ABB61940062713B /* Color.swift in Sources */,
 				B90FE9E52A78271200D4F630 /* UberMapViewRepresentable.swift in Sources */,
+				B9AE93FC2AC3369F0053A9E1 /* SideMenuOptionView.swift in Sources */,
 				B9332E302A74263B00ADBFCA /* UberSwiftUIApp.swift in Sources */,
+				B9AE93FA2AC3352D0053A9E1 /* SideMenuViewModel.swift in Sources */,
 				B9D2ECD72ABB37730062713B /* UberLocation.swift in Sources */,
+				B9AE93F82AC25FFF0053A9E1 /* SideMenuView.swift in Sources */,
 				B9D129042A818AB500D6DB1C /* LocationSearchActivationView.swift in Sources */,
 				B99111E62A8D3C4200DE4A55 /* LocationSearchResultCell.swift in Sources */,
 				B9004D8F2ABC8C2600408AEF /* LoginView.swift in Sources */,
