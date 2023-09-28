@@ -217,13 +217,6 @@
 			path = App;
 			sourceTree = "<group>";
 		};
-		B9332E432A74272400ADBFCA /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
 		B9332E442A74272B00ADBFCA /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -237,7 +230,7 @@
 		B94D2A982A7AF64F0087A87D /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				B9332E432A74272400ADBFCA /* ViewModels */,
+				B9C2B8302AC503AF00A5451C /* ViewModels */,
 				B9332E442A74272B00ADBFCA /* Views */,
 			);
 			path = Home;
@@ -325,6 +318,13 @@
 			isa = PBXGroup;
 			children = (
 				B9AE94062AC4C3A70053A9E1 /* SavedLocationViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		B9C2B8302AC503AF00A5451C /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
