@@ -52,7 +52,7 @@ struct SettingsView: View {
                     
                     ForEach(SavedLocationViewModel.allCases) { viewModel in
                         NavigationLink {
-                            SavedLocationSearchView()
+                            SavedLocationSearchView(config: viewModel)
                         } label: {
                             SavedLocationRowView(viewModel: viewModel)
                         }
