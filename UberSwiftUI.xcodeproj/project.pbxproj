@@ -34,6 +34,8 @@
 		B9AE94052AC37D350053A9E1 /* SettingsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AE94042AC37D350053A9E1 /* SettingsRowView.swift */; };
 		B9AE94072AC4C3A70053A9E1 /* SavedLocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AE94062AC4C3A70053A9E1 /* SavedLocationViewModel.swift */; };
 		B9B020E82A855C5500B980C8 /* MapViewActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B020E72A855C5500B980C8 /* MapViewActionButton.swift */; };
+		B9C2B8322AC5D12D00A5451C /* SavedLocationSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C2B8312AC5D12D00A5451C /* SavedLocationSearchView.swift */; };
+		B9C2B8342AC7455500A5451C /* LocationSearchResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C2B8332AC7455500A5451C /* LocationSearchResultsView.swift */; };
 		B9CE3C9D2A866D5400252F9C /* LocationSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CE3C9C2A866D5400252F9C /* LocationSearchView.swift */; };
 		B9D129042A818AB500D6DB1C /* LocationSearchActivationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D129032A818AB500D6DB1C /* LocationSearchActivationView.swift */; };
 		B9D2ECD52ABA22320062713B /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D2ECD42ABA22320062713B /* Double.swift */; };
@@ -68,6 +70,8 @@
 		B9AE94042AC37D350053A9E1 /* SettingsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRowView.swift; sourceTree = "<group>"; };
 		B9AE94062AC4C3A70053A9E1 /* SavedLocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedLocationViewModel.swift; sourceTree = "<group>"; };
 		B9B020E72A855C5500B980C8 /* MapViewActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewActionButton.swift; sourceTree = "<group>"; };
+		B9C2B8312AC5D12D00A5451C /* SavedLocationSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedLocationSearchView.swift; sourceTree = "<group>"; };
+		B9C2B8332AC7455500A5451C /* LocationSearchResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchResultsView.swift; sourceTree = "<group>"; };
 		B9CE3C9C2A866D5400252F9C /* LocationSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchView.swift; sourceTree = "<group>"; };
 		B9D129032A818AB500D6DB1C /* LocationSearchActivationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchActivationView.swift; sourceTree = "<group>"; };
 		B9D2ECD42ABA22320062713B /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
@@ -124,6 +128,7 @@
 				B9203C552ABE1E7800261AFD /* CustomInputField.swift */,
 				B9AE94022AC37BD90053A9E1 /* SavedLocationRowView.swift */,
 				B9AE94042AC37D350053A9E1 /* SettingsRowView.swift */,
+				B9C2B8332AC7455500A5451C /* LocationSearchResultsView.swift */,
 			);
 			path = ReusableItems;
 			sourceTree = "<group>";
@@ -251,6 +256,7 @@
 				B9D129032A818AB500D6DB1C /* LocationSearchActivationView.swift */,
 				B9CE3C9C2A866D5400252F9C /* LocationSearchView.swift */,
 				B99111E52A8D3C4200DE4A55 /* LocationSearchResultCell.swift */,
+				B9C2B8312AC5D12D00A5451C /* SavedLocationSearchView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -410,6 +416,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B99111EB2A8E604A00DE4A55 /* LocationSearchViewModel.swift in Sources */,
+				B9C2B8322AC5D12D00A5451C /* SavedLocationSearchView.swift in Sources */,
 				B9AE94032AC37BD90053A9E1 /* SavedLocationRowView.swift in Sources */,
 				B9CE3C9D2A866D5400252F9C /* LocationSearchView.swift in Sources */,
 				B90FE9E72A782E8800D4F630 /* LocationManager.swift in Sources */,
@@ -418,6 +425,7 @@
 				B9004D912ABC8C3E00408AEF /* RegistrationView.swift in Sources */,
 				B9AE93F02AC1F68B0053A9E1 /* AuthViewModel.swift in Sources */,
 				B9FC73B62A94FCC3005E4C15 /* MapViewState.swift in Sources */,
+				B9C2B8342AC7455500A5451C /* LocationSearchResultsView.swift in Sources */,
 				B9AE94072AC4C3A70053A9E1 /* SavedLocationViewModel.swift in Sources */,
 				B9AE93F22AC2246D0053A9E1 /* User.swift in Sources */,
 				B9AE94052AC37D350053A9E1 /* SettingsRowView.swift in Sources */,
