@@ -39,7 +39,14 @@ class AuthViewModel: ObservableObject {
             guard let firebaseUser = result?.user else { return }
             self.userSession = firebaseUser
             
-            let user = User(fullname: fullname, email: email, uid: firebaseUser.uid)
+            let user = User(
+                fullname: fullname,
+                email: email,
+                uid: firebaseUser.uid,
+                coordinate: GeoPoint(latitude: -29.673404, longitude: -51.158742),
+                accountType: .passeger
+            )
+            
             guard let encondedUser = try? Firestore.Encoder().encode(user) else { return }
             
             Firestore.firestore().collection("users").document(firebaseUser.uid).setData(encondedUser)
