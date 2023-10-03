@@ -8,10 +8,14 @@
 import Foundation
 import Firebase
 import FirebaseFirestoreSwift
+import Combine
 
 class AuthViewModel: ObservableObject {
     @Published var userSession: FirebaseAuth.User?
     @Published var currentUser: User?
+    
+    private let userService = UserService.shared
+    private var cancellables = Set<AnyCancellable>()
     
     init() {
         userSession = Auth.auth().currentUser
@@ -68,12 +72,10 @@ class AuthViewModel: ObservableObject {
     }
     
     func fetchUser() {
-        guard let uid = userSession?.uid else { return }
-        Firestore.firestore().collection("users").document(uid).getDocument { snapshot, _ in
-            guard let snapshot = snapshot else { return }
-            guard let user = try? snapshot.data(as: User.self) else { return }
-            
-            self.currentUser = user
-        }
+        userService.$user
+            .sink { user in
+                self.currentUser = user
+            }
+            .store(in: &cancellables)
     }
 }

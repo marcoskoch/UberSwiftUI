@@ -92,7 +92,7 @@ extension UberMapViewRepresentable {
             if let annotation = annotation as? DriverAnnotation {
                 let view = MKAnnotationView(annotation: annotation, reuseIdentifier: "driver")
                 view.image = UIImage(named: "uber-anno")
-                view.frame = CGRect(x: 0, y: 0, width: 30, height: 20)
+                view.frame = CGRect(x: 0, y: 0, width: 40, height: 30)
                 return view
             }
             
