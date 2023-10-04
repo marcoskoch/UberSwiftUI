@@ -10,7 +10,7 @@ import SwiftUI
 struct SavedLocationSearchView: View {
     
 //    @State private var text = ""
-    @StateObject var viewModel = LocationSearchViewModel()
+    @StateObject var viewModel = HomeViewModel()
     let config: SavedLocationViewModel
     
     var body: some View {

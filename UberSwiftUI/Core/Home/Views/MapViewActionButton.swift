@@ -11,7 +11,7 @@ struct MapViewActionButton: View {
     
     @Binding var mapState: MapViewState
     @Binding var showSideMenu: Bool
-    @EnvironmentObject var viewModel: LocationSearchViewModel
+    @EnvironmentObject var viewModel: HomeViewModel
     @EnvironmentObject var authViewModel: AuthViewModel
     
     var body: some View {
