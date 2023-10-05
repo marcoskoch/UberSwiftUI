@@ -70,9 +70,67 @@ class HomeViewModel: NSObject, ObservableObject {
     }
 }
 
+// MARK: - Passanger API
+
+extension HomeViewModel {
+    func requestTrip() {
+        guard let driver = drivers.first else { return }
+        guard let currentUser = currentUser else { return }
+        guard let dropOffLocation = selectedUberLocation else { return }
+        let dropoffGeoPoint = GeoPoint(latitude: dropOffLocation.coordinate.latitude,
+                                       longitude: dropOffLocation.coordinate.longitude)
+        let userLocation = CLLocation(latitude: currentUser.coordinate.latitude,
+                                      longitude: currentUser.coordinate.longitude)
+        
+        getPlacemark(forLocation: userLocation) { placemark, error in
+            guard let placemark = placemark else { return }
+            
+            let trip = Trip(
+                id: NSUUID().uuidString,
+                passengerUid: currentUser.uid,
+                driverUid: driver.uid,
+                passengerName: currentUser.fullname,
+                driverName: driver.fullname,
+                passengerLocation: currentUser.coordinate,
+                driverLocation: driver.coordinate,
+                pickupLocationName: placemark.name ?? "Current Location",
+                dropoffLocationName: dropOffLocation.title,
+                pickupLocationAddress: "55 Taruma",
+                pickupLocation: currentUser.coordinate,
+                dropoffLocation: dropoffGeoPoint,
+                tripCost: 50.0
+            )
+            
+            guard let encodedTrip = try? Firestore.Encoder().encode(trip) else { return }
+            Firestore.firestore().collection("trips").document().setData(encodedTrip) { _ in
+                print("DEBUG: Did upload trip to firestore")
+            }
+        }
+    }
+}
+
+// MARK: - Driver API
+
+extension HomeViewModel {
+    
+}
+
 // MARK: - Location Search Helpers
 
 extension HomeViewModel {
+    
+    func getPlacemark(forLocation location: CLLocation, completion: @escaping(CLPlacemark?, Error?) -> Void) {
+        CLGeocoder().reverseGeocodeLocation(location) { placemarks, error in
+            if let error = error {
+                completion(nil, error)
+                return
+            }
+            
+            guard let placemark = placemarks?.first else { return }
+            completion(placemark, nil)
+        }
+    }
+    
     func selectLocation(_ localSearch: MKLocalSearchCompletion, config: LocationResultsViewConfig) {
         
         locationSearch(forLocalSearchCompletion: localSearch) { response, error in
