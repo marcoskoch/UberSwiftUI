@@ -88,7 +88,7 @@ struct RideRequestView: View {
                                 Text(ride.description)
                                     .font(.system(size: 14, weight: .semibold))
                                 
-                                Text(homeViewModel.computeRidePrice(forType: ride))                                    .font(.system(size: 14, weight: .semibold))
+                                Text(homeViewModel.computeRidePrice(forType: ride).toCurrency())                                    .font(.system(size: 14, weight: .semibold))
                             }
                             .padding()
                         }
