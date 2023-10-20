@@ -56,6 +56,7 @@ class HomeViewModel: NSObject, ObservableObject {
                 self.currentUser = user
                 if user.accountType == .passeger {
                     self.fetchDrivers()
+                    self.addTripObserverForPassenger()
                 } else {
                     self.fetchTrips()
                 }
@@ -67,6 +68,21 @@ class HomeViewModel: NSObject, ObservableObject {
 // MARK: - Passanger API
 
 extension HomeViewModel {
+    
+    func addTripObserverForPassenger() {
+        guard let currentUser = currentUser, currentUser.accountType == .passeger else { return }
+        
+        Firestore.firestore().collection("trips")
+            .whereField("passengerUid", isEqualTo: currentUser.uid)
+            .addSnapshotListener { snapshot, _ in
+                guard let change = snapshot?.documentChanges.first,
+                      change.type == .added || change.type == .modified else { return }
+                
+                guard let trip = try? change.document.data(as: Trip.self) else { return }
+                
+                self.trip = trip
+            }
+    }
     
     func fetchDrivers() {
         Firestore.firestore().collection("users")
