@@ -51,6 +51,7 @@
 		B9D2ECD72ABB37730062713B /* UberLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D2ECD62ABB37730062713B /* UberLocation.swift */; };
 		B9D2ECD92ABB61940062713B /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D2ECD82ABB61940062713B /* Color.swift */; };
 		B9DA7B062AE88E9B00E9C154 /* TripAcceptedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DA7B052AE88E9B00E9C154 /* TripAcceptedView.swift */; };
+		B9DA7B082AE95ED600E9C154 /* Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DA7B072AE95ED600E9C154 /* Spinner.swift */; };
 		B9F8F0922A9E7E2F00E3BE7C /* RideType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F8F0912A9E7E2F00E3BE7C /* RideType.swift */; };
 		B9FC73B62A94FCC3005E4C15 /* MapViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FC73B52A94FCC3005E4C15 /* MapViewState.swift */; };
 /* End PBXBuildFile section */
@@ -97,6 +98,7 @@
 		B9D2ECD62ABB37730062713B /* UberLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UberLocation.swift; sourceTree = "<group>"; };
 		B9D2ECD82ABB61940062713B /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		B9DA7B052AE88E9B00E9C154 /* TripAcceptedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripAcceptedView.swift; sourceTree = "<group>"; };
+		B9DA7B072AE95ED600E9C154 /* Spinner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spinner.swift; sourceTree = "<group>"; };
 		B9F8F0912A9E7E2F00E3BE7C /* RideType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideType.swift; sourceTree = "<group>"; };
 		B9FC73B52A94FCC3005E4C15 /* MapViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -145,6 +147,7 @@
 		B9203C542ABE1D8C00261AFD /* ReusableItems */ = {
 			isa = PBXGroup;
 			children = (
+				B9DA7B072AE95ED600E9C154 /* Spinner.swift */,
 				B9203C552ABE1E7800261AFD /* CustomInputField.swift */,
 				B9AE94022AC37BD90053A9E1 /* SavedLocationRowView.swift */,
 				B9AE94042AC37D350053A9E1 /* SettingsRowView.swift */,
@@ -492,6 +495,7 @@
 				B9004D8F2ABC8C2600408AEF /* LoginView.swift in Sources */,
 				B9203C562ABE1E7800261AFD /* CustomInputField.swift in Sources */,
 				B9F8F0922A9E7E2F00E3BE7C /* RideType.swift in Sources */,
+				B9DA7B082AE95ED600E9C154 /* Spinner.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
