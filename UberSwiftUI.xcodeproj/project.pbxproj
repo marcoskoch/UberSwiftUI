@@ -18,6 +18,7 @@
 		B9332E462A74276800ADBFCA /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9332E452A74276800ADBFCA /* HomeView.swift */; };
 		B9649B812A954E91008DBCCC /* RideRequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9649B802A954E91008DBCCC /* RideRequestView.swift */; };
 		B96D910C2AD6002A00E2FDF3 /* GeoPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96D910B2AD6002A00E2FDF3 /* GeoPoint.swift */; };
+		B981486D2AE83D3100225EC2 /* TripLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B981486C2AE83D3100225EC2 /* TripLoadingView.swift */; };
 		B99111E62A8D3C4200DE4A55 /* LocationSearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99111E52A8D3C4200DE4A55 /* LocationSearchResultCell.swift */; };
 		B99111EB2A8E604A00DE4A55 /* LocationSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99111EA2A8E604A00DE4A55 /* LocationSearchViewModel.swift */; };
 		B9AE93E52AC1DF9A0053A9E1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B9AE93E42AC1DF9A0053A9E1 /* GoogleService-Info.plist */; };
@@ -49,6 +50,7 @@
 		B9D2ECD52ABA22320062713B /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D2ECD42ABA22320062713B /* Double.swift */; };
 		B9D2ECD72ABB37730062713B /* UberLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D2ECD62ABB37730062713B /* UberLocation.swift */; };
 		B9D2ECD92ABB61940062713B /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D2ECD82ABB61940062713B /* Color.swift */; };
+		B9DA7B062AE88E9B00E9C154 /* TripAcceptedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DA7B052AE88E9B00E9C154 /* TripAcceptedView.swift */; };
 		B9F8F0922A9E7E2F00E3BE7C /* RideType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F8F0912A9E7E2F00E3BE7C /* RideType.swift */; };
 		B9FC73B62A94FCC3005E4C15 /* MapViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FC73B52A94FCC3005E4C15 /* MapViewState.swift */; };
 /* End PBXBuildFile section */
@@ -66,6 +68,7 @@
 		B9332E452A74276800ADBFCA /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		B9649B802A954E91008DBCCC /* RideRequestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideRequestView.swift; sourceTree = "<group>"; };
 		B96D910B2AD6002A00E2FDF3 /* GeoPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoPoint.swift; sourceTree = "<group>"; };
+		B981486C2AE83D3100225EC2 /* TripLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripLoadingView.swift; sourceTree = "<group>"; };
 		B99111E52A8D3C4200DE4A55 /* LocationSearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchResultCell.swift; sourceTree = "<group>"; };
 		B99111EA2A8E604A00DE4A55 /* LocationSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchViewModel.swift; sourceTree = "<group>"; };
 		B9AE93E42AC1DF9A0053A9E1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -93,6 +96,7 @@
 		B9D2ECD42ABA22320062713B /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		B9D2ECD62ABB37730062713B /* UberLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UberLocation.swift; sourceTree = "<group>"; };
 		B9D2ECD82ABB61940062713B /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		B9DA7B052AE88E9B00E9C154 /* TripAcceptedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripAcceptedView.swift; sourceTree = "<group>"; };
 		B9F8F0912A9E7E2F00E3BE7C /* RideType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideType.swift; sourceTree = "<group>"; };
 		B9FC73B52A94FCC3005E4C15 /* MapViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -296,6 +300,8 @@
 			children = (
 				B9649B802A954E91008DBCCC /* RideRequestView.swift */,
 				B9C2B8402ACC976A00A5451C /* AcceptTripView.swift */,
+				B981486C2AE83D3100225EC2 /* TripLoadingView.swift */,
+				B9DA7B052AE88E9B00E9C154 /* TripAcceptedView.swift */,
 			);
 			path = Trips;
 			sourceTree = "<group>";
@@ -451,6 +457,7 @@
 				B9C2B8322AC5D12D00A5451C /* SavedLocationSearchView.swift in Sources */,
 				B9AE94032AC37BD90053A9E1 /* SavedLocationRowView.swift in Sources */,
 				B9C2B83A2ACB602C00A5451C /* HomeViewModel.swift in Sources */,
+				B981486D2AE83D3100225EC2 /* TripLoadingView.swift in Sources */,
 				B9CE3C9D2A866D5400252F9C /* LocationSearchView.swift in Sources */,
 				B90FE9E72A782E8800D4F630 /* LocationManager.swift in Sources */,
 				B96D910C2AD6002A00E2FDF3 /* GeoPoint.swift in Sources */,
@@ -472,6 +479,7 @@
 				B9B020E82A855C5500B980C8 /* MapViewActionButton.swift in Sources */,
 				B9C2B8362AC768A100A5451C /* SavedLocation.swift in Sources */,
 				B9332E462A74276800ADBFCA /* HomeView.swift in Sources */,
+				B9DA7B062AE88E9B00E9C154 /* TripAcceptedView.swift in Sources */,
 				B9D2ECD92ABB61940062713B /* Color.swift in Sources */,
 				B90FE9E52A78271200D4F630 /* UberMapViewRepresentable.swift in Sources */,
 				B9AE93FC2AC3369F0053A9E1 /* SideMenuOptionView.swift in Sources */,
