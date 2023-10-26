@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct TripAcceptedView: View {
+    @EnvironmentObject var homeViewModel: HomeViewModel
+    
     var body: some View {
         VStack {
             Capsule()
@@ -15,81 +17,84 @@ struct TripAcceptedView: View {
                 .frame(width: 48, height: 6)
                 .padding(.top, 8)
             
-            VStack {
-                HStack {
-                    Text("Meet your driver at Apple Campus from you trip to Starbucks")
-                        .font(.body)
-                        .frame(height: 44)
-                        .lineLimit(2)
-                        .padding(.trailing)
-                    
-                    Spacer()
-                    
-                    VStack {
-                        Text("10")
+            if let trip = homeViewModel.trip {
+                VStack {
+                    HStack {
+                        Text("Meet your driver at \(trip.pickupLocationName) from you trip to \(trip.dropoffLocationName)")
+                            .font(.body)
+                            .frame(height: 44)
+                            .lineLimit(2)
+                            .padding(.trailing)
                         
-                        Text("min")
-                    }
-                    .frame(width: 56, height: 56)
-                    .foregroundColor(.white)
-                    .background(Color(.systemBlue))
-                    .cornerRadius(10)
-                    .bold()
-                }
-                .padding()
-                
-                Divider()
-            }
-            
-            VStack {
-                HStack {
-                    Image("perfil")
-                        .resizable()
-                        .scaledToFill()
-                        .frame(width: 80, height: 80)
-                        .clipShape(Circle())
-                    
-                    VStack(alignment: .leading, spacing: 4) {
-                        Text("Kevin Smith")
-                            .fontWeight(.bold)
+                        Spacer()
                         
-                        HStack {
-                            Image(systemName: "star.fill")
-                                .foregroundColor(Color(.systemYellow))
-                                .imageScale(.small)
+                        VStack {
+                            Text("\(trip.travelTimeToPassenger)")
                             
-                            Text("4.8")
-                                .font(.footnote)
-                                .foregroundColor(.gray)
+                            Text("min")
                         }
+                        .frame(width: 56, height: 56)
+                        .foregroundColor(.white)
+                        .background(Color(.systemBlue))
+                        .cornerRadius(10)
+                        .bold()
                     }
+                    .padding()
                     
-                    Spacer()
-                    
-                    VStack(alignment: .center) {
-                        Image("uber-x")
+                    Divider()
+                }
+                
+                VStack {
+                    HStack {
+                        Image("perfil")
                             .resizable()
                             .scaledToFill()
-                            .frame(width: 120, height: 64)
+                            .frame(width: 80, height: 80)
+                            .clipShape(Circle())
                         
-                        HStack {
-                            Text("Mercedes S -")
-                                .font(.system(size: 14, weight: .semibold))
-                                .foregroundColor(.gray)
+                        VStack(alignment: .leading, spacing: 4) {
+                            Text(trip.driverName)
+                                .fontWeight(.bold)
                             
-                            Text("5G43K08")
-                                .font(.system(size: 14, weight: .semibold))
-                            
+                            HStack {
+                                Image(systemName: "star.fill")
+                                    .foregroundColor(Color(.systemYellow))
+                                    .imageScale(.small)
+                                
+                                Text("4.8")
+                                    .font(.footnote)
+                                    .foregroundColor(.gray)
+                            }
                         }
-                        .frame(width: 165)
-                        .padding(.bottom)
+                        
+                        Spacer()
+                        
+                        VStack(alignment: .center) {
+                            Image("uber-x")
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 120, height: 64)
+                            
+                            HStack {
+                                Text("Mercedes S -")
+                                    .font(.system(size: 14, weight: .semibold))
+                                    .foregroundColor(.gray)
+                                
+                                Text("5G43K08")
+                                    .font(.system(size: 14, weight: .semibold))
+                                
+                            }
+                            .frame(width: 165)
+                            .padding(.bottom)
+                        }
+                        
                     }
                     
+                    Divider()
                 }
-                
-                Divider()
+                .padding()
             }
-            .padding()
+            
             
             Button {
                 
