@@ -20,6 +20,7 @@ class HomeViewModel: NSObject, ObservableObject {
     private let userService = UserService.shared
     var currentUser: User?
     private var cancellables = Set<AnyCancellable>()
+    var routePickupLocation: MKRoute?
     
     // Location search properties
     
@@ -151,6 +152,7 @@ extension HomeViewModel {
                 self.trip = trip
                 
                 self.getDestinationRoute(from: trip.driverLocation.toCoordinate(), to: trip.pickupLocation.toCoordinate()) { route in
+                    self.routePickupLocation = route
                     self.trip?.travelTimeToPassenger = Int(route.expectedTravelTime / 60)
                     self.trip?.distanceToPassenger = route.distance
                 }
