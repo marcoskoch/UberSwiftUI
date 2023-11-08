@@ -50,6 +50,27 @@ class HomeViewModel: NSObject, ObservableObject {
     
     // MARK: - Helpers
     
+    var tripCancelledMessage: String {
+        guard let user = currentUser, let trip = trip else { return "" }
+        var message = ""
+        
+        if user.accountType == .passeger {
+            if trip.state == .driverCancelled {
+                message = "Your driver cancelled this trip"
+            } else {
+                message = "Your trip has been cancelled"
+            }
+        } else {
+            if trip.state == .driverCancelled {
+                message = "Your trip has been cancelled"
+            } else {
+                message = "The trip has been cancelled by passanger"
+            }
+        }
+        
+        return message
+    }
+    
     func viewForState(_ state: MapViewState, user: User) -> some View {
         switch state {
         case .polylineAdded:
@@ -70,10 +91,8 @@ class HomeViewModel: NSObject, ObservableObject {
                     return AnyView(PickupPassengerView(trip: trip))
                 }
             }
-        case .tripCancelledByPassenger:
-            return AnyView(Text("Trip cancelled by passenger"))
-        case .tripCancelledByDriver:
-            return AnyView(Text("Trip cancelled by driver"))
+        case .tripCancelledByPassenger, .tripCancelledByDriver:
+            return AnyView(TripCancelledView())
         default:
             break
         }
@@ -110,6 +129,14 @@ class HomeViewModel: NSObject, ObservableObject {
         
         Firestore.firestore().collection("trips").document(trip.id).updateData(data) { _ in
             print("DEBUG: Did update trip with state: \(state)")
+        }
+    }
+    
+    func deleteTrip() {
+        guard let trip = trip else { return }
+        
+        Firestore.firestore().collection("trips").document(trip.id).delete() { _ in
+            self.trip = nil
         }
     }
 }
