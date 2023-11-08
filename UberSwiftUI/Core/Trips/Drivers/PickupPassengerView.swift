@@ -9,6 +9,7 @@ import SwiftUI
 
 struct PickupPassengerView: View {
     let trip: Trip
+    @EnvironmentObject var homeViewModel: HomeViewModel
     
     var body: some View {
         VStack {
@@ -82,7 +83,7 @@ struct PickupPassengerView: View {
             .padding()
             
             Button {
-                
+                homeViewModel.cancelTripAsDriver()
             } label: {
                 Text("CANCEL RIDE")
                     .fontWeight(.bold)
